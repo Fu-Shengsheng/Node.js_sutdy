@@ -1,0 +1,14 @@
+{
+    "name": "nodejs-mysql",
+    "description": "nodejs-mysql",
+    "authors": "FSS",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "sequelize": "3.24.1",
+        "mysql": "2.11.1"
+    }
+}

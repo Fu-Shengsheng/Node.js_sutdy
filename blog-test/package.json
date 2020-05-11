@@ -1,0 +1,19 @@
+{
+  "name": "blog-test",
+  "version": "1.0.0",
+  "description": "blog powered by Koa & MongoDB",
+  "main": "index.js",
+  "author": "Fu-shengsheng",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.2"
+  },
+  "scripts": {
+    "start": "node -r esm index.js"
+  }
+}

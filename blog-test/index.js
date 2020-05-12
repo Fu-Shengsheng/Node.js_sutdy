@@ -8,10 +8,16 @@ import router from './middleware/router'
 import bodyParser from 'koa-bodyparser'
 // 模板引擎中间件
 import views from 'koa-views'
-
+// 数据库中间件
+import db from './middleware/db'
 // app.use(views(`${__dirname}/static/html`, { extension: 'ejs' }))
 app.use(serve(`${__dirname}/static/html`, { extensions: ['html'] }))
 
 app.listen(8765, () => {
     console.log('Listening on 8765')
+})
+
+db.on('error', console.error.bind(console, 'connection error:'))
+db.once('open', function () {
+    console.log('connected')
 })

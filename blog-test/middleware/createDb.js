@@ -23,12 +23,10 @@ const admin = new loginModel({
     password: 'admin'
 })
 
-// 保存新建的实例
-admin.save(err => {
-    if (err) {
-        console.error('实例保存失败', err)
-    } else {
-        console.log('admin 创建完成')
-    }
+const blogListSchema = new mongoose.Schema({
+    title: String,
+    kind: String,
+    id: String
 })
 
+const blogListModel = db.model('blogList', blogListSchema, 'blogList')

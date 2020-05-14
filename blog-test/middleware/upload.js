@@ -2,7 +2,7 @@ import formidable from 'formidable'
 import fs from 'fs'
 
 // 数据库中间件
-import dbAction from './db'
+import dbAPI from './db'
 
 
 /**
@@ -22,7 +22,7 @@ function dealUpload(ctx) {
             throw err
         }
         fs.renameSync(files.file.path, form.uploadDir + files.file.name)
-        // TODO save to db
-        const id = dbAction.insertBlogList(files.file.name, fields.kind)
+        dbAPI.insertBlogList(files.file.name, fields.kind)
+        dbAPI.saveBlog(`${__dirname}/static/blogs/${files.file.name}`, files.kind)
     })
 }

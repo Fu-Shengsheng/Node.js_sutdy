@@ -15,13 +15,13 @@ const loginSchema = new mongoose.Schema({
 })
 
 // 创建模型
-const loginModel = db.model('login', loginSchema, 'login')
+db.model('login', loginSchema, 'login')
 
-// 创建模型的实例
-const admin = new loginModel({
-    username: 'admin',
-    password: 'admin'
-})
+// // 创建模型的实例
+// const admin = new loginModel({
+//     username: 'admin',
+//     password: 'admin'
+// })
 
 const blogListSchema = new mongoose.Schema({
     title: String,
@@ -29,4 +29,11 @@ const blogListSchema = new mongoose.Schema({
     id: String
 })
 
-const blogListModel = db.model('blogList', blogListSchema, 'blogList')
+db.model('blogList', blogListSchema, 'blogList')
+
+const blogSchema = new mongoose.Schema({
+    content: String,
+    id: String
+})
+
+db.model("blog", blogSchema, "blog")

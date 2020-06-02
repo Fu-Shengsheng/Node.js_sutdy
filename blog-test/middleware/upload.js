@@ -26,3 +26,5 @@ function dealUpload(ctx) {
         dbAPI.saveBlog(`${__dirname}/static/blogs/${files.file.name}`, files.kind)
     })
 }
+
+export default dealUpload

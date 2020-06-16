@@ -9,6 +9,7 @@
 <body>
     <div id="app">
         {{list}}
+        <p class="article" v-for="(item,index) in list" :key="index">{{item.title}}</p>
     </div>
     <script>
         const App = new Vue({
